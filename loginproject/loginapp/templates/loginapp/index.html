@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Login app| Joshyvibe</title> 
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Welcome Lets login</span></div>
+        <br><br>
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'logout' %}" class="a_tag">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="a_tag">Login Here</a>
+        {% endif %}
+      </div>
+    </div>
+
+  </body>
+</html>
